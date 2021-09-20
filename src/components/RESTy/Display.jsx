@@ -3,15 +3,21 @@ import PropTypes from 'prop-types';
 import ReactJson from 'react-json-view';
 
 
-const Display = ({ res }) => (
-  <div>
-    <ReactJson src={res} />
-  </div>
-);
+const Display = ({ response }) => {
+  return (
+    <article aria-label="display-response">
+      <ReactJson src={response} />
+    </article>
+  );
+};
+
 
 
 Display.propTypes = {
-  res: PropTypes.object || PropTypes.array,
+  response: PropTypes.oneOfTypes([
+    PropTypes.object,
+    PropTypes.array
+  ]).isRequired
 };
 
 
