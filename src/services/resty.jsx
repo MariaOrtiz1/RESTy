@@ -1,14 +1,11 @@
-export const fetchApi = async (url, method, JSON) => {
-  const res = await fetch(url, {
-    method,
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    JSON
-  });
+export const fetchRestyApi = (url, method, body) => {
+  
+  if(method === 'GET' || method === 'DELETE') {
+    return fetch(url).then((res) => res.json());
+  }
 
-  const json = await res.json();
-  const stringyJson = JSON.stringify(json);
-
-  return stringyJson;
+  return fetch(url, { method, headers: {
+    'Content-Type': 'application/json' },
+  body,
+  }).then((res) => res.json());
 };
