@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RESTycontainer should display a controls section and a display section 1`] = `Promise {}`;

@@ -14,6 +14,7 @@ const Controls = ({ url, body, onChange, onSubmit }) => (
         type="text"
         placeholder="https://"
         value={url}
+        onChange={onChange}
       />
 
       <section aria-label="methodSelector">

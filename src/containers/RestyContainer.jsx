@@ -22,7 +22,8 @@ export default class RESTyContainer extends Component {
       event.preventDefault();
       const { url, method, body } = this.state;
       const response = await fetchRestyApi(url, method, body);
-      this.setState({ display: response });
+      const JSON = await response.json();
+      this.setState({ display: JSON });
     };
 
     render() {
